@@ -4,14 +4,14 @@ e.g., for a ticket in a modal dialog like
 
 ```
 +-------------------------------
-|  [/] Epic / [^] TICKET-42
+|  [⚡️] Epic / [v] TICKET-42
 |
 |  Summary goes here
 |  [button] [button] [button]
 |
 ```
 
-becomes `TICKET-42-summary-goes-here`
+becomes `feature/TICKET-42-summary-goes-here`
 
 
 ### USING

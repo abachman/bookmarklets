@@ -37,5 +37,5 @@ const title =
       '[data-test-id="issue.views.issue-base.foundation.summary.heading"]'
     )
     .text() || "no title";
-const gitBranch = projectCode + slugify("-" + title);
+const gitBranch = "feature/" + projectCode + slugify("-" + title);
 window.prompt("Copy to clipboard", gitBranch);
