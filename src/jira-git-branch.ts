@@ -25,12 +25,23 @@ function slugify(str: string) {
   return str;
 }
 
-const projectCode: string =
-  window
+// modal
+let projectCode = 'NOCODE'
+if (window.jQuery('div[role="dialog"]').length > 0) {
+  projectCode = window
     .jQuery(
       'div[role="dialog"] [aria-label="Breadcrumbs"] a:contains("KOREGRAPH-")'
     )
-    .text() || "no id";
+    .text();
+} else {
+  // standalone page
+  projectCode = window
+    .jQuery(
+      '#jira-issue-header a:contains("KOREGRAPH-")'
+    )
+    .text();
+}
+
 const title =
   window
     .jQuery(
