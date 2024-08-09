@@ -25,28 +25,16 @@ function slugify(str: string) {
   return str;
 }
 
-// modal
-let projectCode = 'NOCODE'
-if (window.jQuery('div[role="dialog"]').length > 0) {
-  projectCode = window
-    .jQuery(
-      'div[role="dialog"] [aria-label="Breadcrumbs"] a:contains("KOREGRAPH-")'
-    )
-    .text();
+let projectCode = "NOCODE";
+if (window.jQuery("#ghx-detail-view").length > 0) {
+  projectCode = window.jQuery(`#ghx-detail-view #issuekey-val a`).text();
 } else {
   // standalone page
   projectCode = window
-    .jQuery(
-      '#jira-issue-header a:contains("KOREGRAPH-")'
-    )
+    .jQuery(`#issue-content .aui-page-header a.issue-link`)
     .text();
 }
 
-const title =
-  window
-    .jQuery(
-      '[data-test-id="issue.views.issue-base.foundation.summary.heading"]'
-    )
-    .text() || "no title";
-const gitBranch = "feature/" + projectCode + slugify("-" + title);
+const title = window.jQuery("#summary-val").text() || "no title";
+const gitBranch = projectCode + slugify("-" + title);
 window.prompt("Copy to clipboard", gitBranch);

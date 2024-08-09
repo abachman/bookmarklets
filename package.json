@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "@types/jquery": "^3.5.6",
-    "esbuild": "^0.12.28"
+    "esbuild": "^0.12.28",
+    "lodash": "^4.17.21"
   },
   "license": "MIT",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "to-extension": "open https://sandbox.self.li/bookmarklet-to-extension/"
   }
 }
